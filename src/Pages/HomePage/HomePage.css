@@ -1,0 +1,62 @@
+
+
+/* home-dashboard */
+.homepage-container{
+    background-image: url(../../img/runrun.webp);
+    width: 100vw;
+    height: auto;
+    background-size: cover;
+}
+.home-content{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.home-dashboard{
+    width: 60%;
+    background-image: linear-gradient(60deg, #0e7bc489 0%, #cacbcb9e 100%);
+    margin: 16px 16px;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+.home-banner{
+    width: 40%;
+}
+.home-user{
+    display: flex;
+    border-bottom: 1px solid white;
+}
+.home-profile{
+width: 40%;
+}
+.home-run-diary{
+width: 60%
+}
+/* End home-dashboard */
+/* home-tools */
+.home-tools{
+    display: flex;
+    flex-direction: row;
+    padding-right: 30px;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+.home-bmi{
+width: 50%;
+}
+.home-table{
+width: 50%;
+}
+/* End home-tools */
+/* home-banner */
+.home-banner{
+    display: flex;
+    flex-direction: column;
+}
+.home-banner-news{
+    height: 60%;
+}
+.home-ranking{
+    height: 40%;
+}
+/* End home-banner */

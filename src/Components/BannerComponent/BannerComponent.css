@@ -1,0 +1,48 @@
+.banner{
+    width: 100%;
+    height: 100%;
+    background-image: url(../../img/womenrunbanner.png);
+    background-size: cover;
+    margin-top: 18px;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.banner::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(151, 157, 161);
+    opacity: .5;
+    z-index: 1;
+}
+.banner h2{
+color: rgb(255, 255, 255);
+text-shadow: 2px 2px gray;
+font-size: 35px;
+margin-bottom: 20px;
+z-index: 2;
+position: relative;
+}
+.banner a{
+    text-decoration: none;
+    background-color: rgb(80, 80, 223);
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 12px 18px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.banner a:hover{
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.847),
+    0 0 20px rgba(255, 255, 255, 0.711),
+    0 0 40px rgba(255, 255, 255, 0.53);
+    background-color: rgb(25, 164, 25);
+}

@@ -1,0 +1,48 @@
+.TableComponent{
+    background-image: url(../../img/planrunpicture.png);
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.TableComponent::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(118, 120, 124);
+    opacity: .7;
+    z-index: 1;
+}
+.TableComponent-text p{
+    position: relative;
+    color: white;
+    font-weight: 800;
+    font-size: 25px;
+    z-index: 2;
+}
+.TableComponent button{
+    position: relative;
+    z-index: 2;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    padding: 6px 15px;
+    background-color: rgb(91, 91, 248);
+    color: white;
+    cursor: pointer;
+}
+.TableComponent button:hover{
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.847),
+    0 0 20px rgba(255, 255, 255, 0.711),
+    0 0 40px rgba(255, 255, 255, 0.53);
+    background-color: rgb(25, 164, 25);
+}

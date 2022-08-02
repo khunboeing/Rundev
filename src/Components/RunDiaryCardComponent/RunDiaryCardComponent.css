@@ -1,0 +1,38 @@
+.RunDiaryhome-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 30px;
+    margin-right: 30px;
+    background-image: linear-gradient(60deg, #4f7c864f 0%, #cacbcb8b 100%);
+    margin-top: 10px;
+    padding: 20px 30px;
+    border-radius: 20px;
+    border: 1px solid white;
+    position: relative;
+    transition: .5s;
+}
+.RunDiaryhome-card:hover{
+    transform: translateY(-20px);
+}
+.RunDiaryhome-card-info p{
+    font-weight: 500;
+    color: rgb(70, 69, 82);
+    position: relative;
+}
+.RunDiaryhome-card-info :nth-child(1){
+    color: black;
+    font-weight: 600;
+}
+.RunDiaryhome-card-km{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.RunDiaryhome-card-km p{
+    font-size: 25px;
+    font-weight: 600;
+    color: rgb(252, 255, 252);
+    text-shadow: .5px .5px rgb(0, 0, 0);
+    position: relative;
+}
