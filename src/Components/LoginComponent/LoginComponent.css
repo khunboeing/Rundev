@@ -1,0 +1,58 @@
+.login-container {
+    background-color: rgba(199, 208, 213, 0.597);
+    margin-top: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px;
+}
+.login-container h2{
+    font-size: 30px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+.login-username{
+    margin-bottom: 20px;
+}
+.login-username label{
+    font-size: 25px;
+    margin-right: 20px;
+}
+.login-username input{
+    border: none;
+    border-radius: 20px;
+    font-size: 25px;
+}
+.login-password {
+    margin-bottom: 20px;
+}
+.login-password label{
+    font-size: 25px;
+    margin-right: 20px;
+}
+.login-password input{
+    border: none;
+    border-radius: 20px;
+    font-size: 25px;
+}
+.login-component-form a {
+    color: rgb(51, 73, 246);
+    font-size: 20px;
+    text-shadow: .5px .5px rgb(255, 255, 255);
+}
+.login-component-form  button{
+    margin-top: 30px;
+    margin-bottom: 50px;
+    padding: 10px 30px;
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: rgb(104, 233, 190);
+}
+.login-component-form button:hover{
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.847),
+    0 0 20px rgba(255, 255, 255, 0.711),
+    0 0 40px rgba(255, 255, 255, 0.53);
+}

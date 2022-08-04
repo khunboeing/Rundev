@@ -11,7 +11,7 @@ function NavComponent (){
             <div className='nav-btn'>
                 <a href="#">Home</a>
                 <a href="#">Profile</a>
-                <a href="#">About us</a>
+                <a href="#">About Me</a>
             </div>
         </div>
     )

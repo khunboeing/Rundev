@@ -1,4 +1,64 @@
 .bmi{
+    background-image: linear-gradient(60deg, #2690dcc4 0%, #53566075 100%);
     width: 100%;
     height: 100%;
+}
+.bmi-container h2{
+    color: rgba(255, 255, 255, 0.921);
+    padding-top: 40px;
+    padding-left: 40px;
+}
+.bmi-home-height{
+    display: flex;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.bmi-home-height label,
+.bmi-home-weight label
+{
+    font-size: 20px;
+    color: white;
+}
+.bmi-home-height p,
+.bmi-home-weight p{
+    color: white;
+}
+.bmi-home-height input,
+.bmi-home-weight input,
+.bmi-home-solution input{
+    font-size: 18px;
+}
+
+.bmi-home-weight{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-bottom: 30px;
+}
+.bmi-home-solution{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 20px 20px
+}
+.home-bmi-compute{
+    border: none;
+    border-radius: 10px;
+    margin: 0 20px;
+    padding: 10px 10px;
+}
+
+.bmi-home-solution button{
+    margin: 0;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    color: white;
+    background-image: linear-gradient(60deg, #2690dcc4 0%, #60535675 100%);
+    padding: 8px 12px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.bmi-home-solution button:hover{
+    background-color: rgb(212, 68, 68);
 }

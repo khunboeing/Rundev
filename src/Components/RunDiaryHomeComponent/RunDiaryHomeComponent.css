@@ -33,3 +33,9 @@
     border-radius: 10px;
     background-color: rgb(76, 86, 236);
 }
+.RunDiaryHomeComponent button:hover{
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.847),
+    0 0 20px rgba(255, 255, 255, 0.711),
+    0 0 40px rgba(255, 255, 255, 0.53);
+    background-color: rgb(108, 163, 25);
+}

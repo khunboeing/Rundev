@@ -40,3 +40,6 @@
     margin: 16px 0;
     cursor: pointer;
 }
+.profile-detial button:hover{
+    background-color: rgb(26, 45, 171);
+}

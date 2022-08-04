@@ -1,0 +1,34 @@
+.page-editprofile-container {
+    background-image: linear-gradient(60deg, #757c7e96 0%, #7f859875 100%);
+    margin-top: 40px;
+    border-radius: 20px;
+    margin-right: 50px;
+    margin-bottom: 40px;
+}
+form h1{
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+.profile-Account-picture img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form h1{
+    color: white;
+}
+.create-p-label label{
+    font-size: 18px;
+    color: white;
+}
+.create-p-input input{
+    font-size: 20px;
+}
+.btn-save-editprofile{
+    margin-bottom: 50px;
+}

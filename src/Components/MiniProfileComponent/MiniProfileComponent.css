@@ -1,0 +1,43 @@
+
+.miniprofile-container{
+     background-image: linear-gradient(60deg, #327db392 0%, #53566064 100%);
+     margin-top: 40px;
+     margin-left: 70px;
+     margin-right: 30px;
+     border-radius: 30px;
+}
+.miniprofile-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.miniprofile-img{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.miniprofile-img img{
+    width: 250px;
+    height: 250px;
+    border: 10px solid white;
+    border-radius: 50%;
+}
+.miniprofile-info p{
+    font-size: 30px;
+    font-weight: 500;
+    background-image: linear-gradient(60deg, #3f5ee6a9 0%, #53566064 100%);
+    color: white;
+    padding: 10px 40px;
+    margin-bottom: 16px;
+    border-radius: 20px;
+}
+.miniprofile-info button{
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    padding-left: 20px;
+
+    font-size: 25px;
+    color: white;
+    background-image: linear-gradient(60deg, #9f160ad5 0%, #565b67a3 100%);margin-bottom: 30px;
+}

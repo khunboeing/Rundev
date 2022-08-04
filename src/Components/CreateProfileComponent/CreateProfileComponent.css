@@ -1,0 +1,77 @@
+.Profile-user-container{
+
+}
+.profile-create-user{
+    background-color: rgba(150, 152, 155, 0.513);
+    margin-top: 50px;
+    margin-right: 40px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile-create-user h2{
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px black;
+    font-size: 35px;
+    padding-top: 30px;
+
+}
+.input-info-createprofile{
+    border: none;
+    border-radius: 10px;
+    padding: 10px 30px;
+    background-color: rgba(240, 248, 255, 0.583);
+}
+.create-p-label{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    color: rgb(48, 51, 54);
+}
+.create-p-input input{
+    border: none;
+    border-radius: 10px;
+    padding: 5px 40px;
+    font-size: 18px;
+}
+#upload{
+    margin-bottom: 30px;
+}
+.create-p-label-load{
+}
+.create-p-label-load button{
+    margin-top: 20px;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    background-image: linear-gradient(60deg, #2690dcc4 0%, #53566075 100%);
+}
+.profile-create-user button{
+    font-size: 20px;
+    padding: 10px 20px;
+    margin-bottom: 5px;
+    margin-left: -40px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-image: linear-gradient(60deg, #03497bc4 0%, #2d303a75 100%);
+}
+select{
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-weight: 600;
+    color: rgb(34, 133, 137);
+}
+.profile-create-user button:hover{
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.847),
+    0 0 20px rgba(255, 255, 255, 0.711),
+    0 0 40px rgba(255, 255, 255, 0.53);
+}
+.btn-create-profile{
+ margin-bottom: 40px;
+}

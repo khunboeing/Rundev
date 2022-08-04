@@ -2,7 +2,7 @@
     background-image: url(../../img/planrunpicture.png);
     background-size: cover;
     width: 100%;
-    height: 300px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;

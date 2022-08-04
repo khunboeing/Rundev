@@ -1,0 +1,17 @@
+.fullpage-rundiary-container{
+    background-image: url(../../img/runbg.jpeg);
+    width: 100vw;
+    height: 120vh;
+    background-size: cover;
+    
+}
+.fullpage-rundiary-box{
+    width: 100%;
+    display: flex;
+}
+.fullpage-rundiary-profile{
+    width: 40%;
+}
+.fullpage-rundiary-card{
+    width: 60%;
+}

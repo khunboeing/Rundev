@@ -1,6 +1,6 @@
 import React from 'react'
 import './RunDiaryHomeComponent.css'
-import Iconaddrundiary from '../../img/icon-plus67.png'
+import Iconaddrundiary from '../../img/iconadd-48.png'
 import RunDiaryCardComponent from '../RunDiaryCardComponent/RunDiaryCardComponent'
 
 function RunDiaryHomeComponent() {

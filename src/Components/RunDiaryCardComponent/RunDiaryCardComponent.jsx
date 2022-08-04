@@ -1,6 +1,6 @@
 import React from 'react'
 import './RunDiaryCardComponent.css'
-import IconDeleteCaedhome from '../../img/icondelete-32.png'
+import IconDeleteCaedhome from '../../img/icondelete-64.png'
 function RunDiaryCardComponent() {
     const userdata = {
         name:'Run Run Cookie Runnn',

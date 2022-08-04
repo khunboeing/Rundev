@@ -1,0 +1,12 @@
+
+.createprofile-page-container{
+background-image: url(../../img/profilepagebg.jpeg);
+background-size: cover;
+width: 100vw;
+height: 130vh;
+display: flex;
+justify-content: end;
+}
+.page-createprofile-container{
+    width: 50%;
+}

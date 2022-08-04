@@ -1,0 +1,28 @@
+.edit-p-container{
+    background-image: url(../../img/profilepagebg.jpeg);
+    width: 100vw;
+    height: 160vh;
+    background-size: cover;
+    display: flex;
+    justify-content: end;
+}
+.edit-p-box{
+    width: 50%;
+}
+.btn-save-editprofile{
+    padding: 8px 16px;
+    font-size: 22px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(5, 174, 118);
+    color: white;
+    cursor: pointer;
+}
+.btn-save-editprofile:hover{
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.847),
+    0 0 20px rgba(255, 255, 255, 0.711),
+    0 0 40px rgba(255, 255, 255, 0.53);
+}
+.btn-upload-profile-edit{
+    margin-left: -100px;
+}
