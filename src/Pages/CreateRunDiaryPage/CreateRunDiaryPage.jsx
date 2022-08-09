@@ -2,6 +2,7 @@ import React from 'react'
 import './CreateRunDiaryPage.css'
 import Nav from '../../Components/NavComponent/NavComponent'
 import RunDiaryBoxComponent from '../../Components/RunDiaryBox Component/RunDiaryBoxComponent'
+
 function CreateRunDiaryPage() {
   return (
     <>

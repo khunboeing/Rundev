@@ -40,7 +40,7 @@
     font-size: 20px;
     text-shadow: .5px .5px rgb(255, 255, 255);
 }
-.login-component-form  button{
+.login-component-form  input[type='submit']{
     margin-top: 30px;
     margin-bottom: 50px;
     padding: 10px 30px;
@@ -51,7 +51,7 @@
     cursor: pointer;
     background-color: rgb(104, 233, 190);
 }
-.login-component-form button:hover{
+.login-component-form input[type='submit']:hover{
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.847),
     0 0 20px rgba(255, 255, 255, 0.711),
     0 0 40px rgba(255, 255, 255, 0.53);

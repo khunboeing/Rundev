@@ -6,14 +6,21 @@ function CreateProfileEditProfileComponent() {
     <div className='Profile-user-container'>
         
         <div className='profile-create-user'>
-              <form action="">
           <h2>Create Account</h2>
+              <form action="" className='form-create-profile'>
 
                 <div className='create-p-label'>
                   <label htmlFor="name">NAME</label>
                 </div>
                 <div className='create-p-input'>
                   <input type="text" id='name' required />
+                </div>
+
+                <div className='create-p-label'>
+                  <label htmlFor="email">E-MAIL</label>
+                </div>
+                <div className='create-p-input'>
+                  <input type='email' id='email' required />
                 </div>
 
                 <div className='create-p-label'>

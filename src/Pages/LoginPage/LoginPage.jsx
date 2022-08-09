@@ -6,7 +6,6 @@ import LoginComponent from '../../Components/LoginComponent/LoginComponent'
 function LoginPage() {
   return (
     <>
-      <Nav />
     <div className='loginpage-container'>
       <div className='loginpage-seperate'>
       <LoginComponent />

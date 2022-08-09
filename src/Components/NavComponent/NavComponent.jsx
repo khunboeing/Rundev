@@ -1,6 +1,7 @@
 
 import '../NavComponent/NavComponent.css'
 import Logo from '../../img/icon-runworker.png'
+import {Link} from 'react-router-dom'
 
 function NavComponent (){
     return(
@@ -9,9 +10,9 @@ function NavComponent (){
                 <img src={Logo} alt="RUN-DEV" /><h1>RUN-DEV{'/>'}</h1>
             </div>
             <div className='nav-btn'>
-                <a href="#">Home</a>
-                <a href="#">Profile</a>
-                <a href="#">About Me</a>
+                <Link to='/'>Home</Link>
+                <Link to="/editprofile">Profile</Link>
+                <Link to="#">About Me</Link>
             </div>
         </div>
     )

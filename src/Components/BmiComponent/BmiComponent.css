@@ -48,7 +48,7 @@
     padding: 10px 10px;
 }
 
-.bmi-home-solution button{
+.btn-bmi-submit {
     margin: 0;
     border: none;
     border-radius: 20px;
@@ -59,6 +59,6 @@
     margin-right: 20px;
     cursor: pointer;
 }
-.bmi-home-solution button:hover{
+.btn-bmi-submit:hover{
     background-color: rgb(212, 68, 68);
 }

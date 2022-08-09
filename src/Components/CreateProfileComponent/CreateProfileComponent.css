@@ -7,6 +7,7 @@
     margin-right: 40px;
     border-radius: 20px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -15,7 +16,6 @@
     text-shadow: 1px 1px black;
     font-size: 35px;
     padding-top: 30px;
-
 }
 .input-info-createprofile{
     border: none;
@@ -29,6 +29,9 @@
     font-weight: 600;
     font-size: 18px;
     color: rgb(48, 51, 54);
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
 }
 .create-p-input input{
     border: none;
