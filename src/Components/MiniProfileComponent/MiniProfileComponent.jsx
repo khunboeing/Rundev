@@ -11,7 +11,7 @@ function MiniProfileComponent(props) {
     <div className='miniprofile-container'>
         <div className='miniprofile-box'>
           <div className='miniprofile-img'>
-            <img src={Profileforcardpage} />
+            <img src={personalData.bio.picture || Profileforcardpage} />
           </div>
           <div className='miniprofile-info'>
             <p>Boeing Miffy </p>
