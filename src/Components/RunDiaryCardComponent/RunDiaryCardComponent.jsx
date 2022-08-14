@@ -21,6 +21,7 @@ function RunDiaryCardComponent(props) {
         <div className='RunDiaryhome-card-info'>
             <p>{userdata.name}</p>
             <p>{userdata.date}</p>
+            <p>{userdata?.location || 'location'}</p>
             <p>{userdata.motivate}</p>
         </div>
         <div className='RunDiaryhome-card-km'>
