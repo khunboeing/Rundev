@@ -43,13 +43,15 @@
     margin-bottom: 30px;
 }
 .create-p-label-load{
+    margin: 20px 0;
 }
-.create-p-label-load button{
+.create-p-label-load input{
+    width: 250px;
     margin-top: 20px;
     padding: 8px 14px;
     border: none;
     border-radius: 10px;
-    font-size: 18px;
+    font-size: 14px;
     cursor: pointer;
     background-image: linear-gradient(60deg, #2690dcc4 0%, #53566075 100%);
 }
@@ -77,4 +79,18 @@ select{
 }
 .btn-create-profile{
  margin-bottom: 40px;
+}
+.wrong-password{
+    position: relative;
+    margin: 16px 0;
+}
+.wrong-password::before{
+    content: 'Oops! wrong password or confirm password.';
+    position: absolute;
+    height: 20px;
+    top: -20px;
+    left: 5px;
+    font-size: 14px;
+    color: #e85757;
+    text-shadow: 1px 1px 5px rgba(238, 231, 223, 0.85);
 }
