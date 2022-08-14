@@ -15,7 +15,7 @@ function ProfileComponent(props){
     return(
             <div className='profile-component-container'>
                 <div className="profile-img">
-                    <img src={Profilepicturehome} />
+                    <img src={bio.picture || Profilepicturehome} />
                 </div>
                 <div className="profile-detial">
                     <p>{bio.name}</p>
