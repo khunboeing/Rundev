@@ -3,11 +3,12 @@ import './RunDiaryCardComponent.css'
 import IconDeleteCaedhome from '../../img/icondelete-64.png'
 import {useContext} from 'react'
 import {DataContext} from '../../App'
+import axios from 'axios'
 
 function RunDiaryCardComponent(props) {
 
   const context = useContext(DataContext)
-  const{deleteDiaryCard} = context
+  const{deleteDiaryCard, userID,toggleForceRender} = context
 
     const{rundiary:userdata} = props
     // const userdata = {
@@ -16,6 +17,12 @@ function RunDiaryCardComponent(props) {
     //     distance:'6',
     //     motivate:'For run run run'
     // }
+
+  async function haddleDelete(){
+    const deleted = await axios.delete(`http://localhost:2408/user/${userID}/diary/${userdata.id}`)
+    toggleForceRender()
+  }
+
   return (
     <div className='RunDiaryhome-card'>
         <div className='RunDiaryhome-card-info'>
@@ -25,7 +32,7 @@ function RunDiaryCardComponent(props) {
             <p>{userdata.motivate}</p>
         </div>
         <div className='RunDiaryhome-card-km'>
-            <button onClick={()=>deleteDiaryCard(userdata.id)} className='btn-delete-card-home'><img src={IconDeleteCaedhome} /></button>
+            <button onClick={haddleDelete} className='btn-delete-card-home'><img src={IconDeleteCaedhome} /></button>
             <p>{userdata.distance} Km</p>
         </div>
     </div>

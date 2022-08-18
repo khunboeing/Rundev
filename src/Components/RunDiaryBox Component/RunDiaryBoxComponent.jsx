@@ -6,12 +6,13 @@ import {DataContext} from '../../App';
 import {useContext} from 'react';
 import {v4 as uuidv4} from 'uuid';
 import {useNavigate} from 'react-router-dom';
+import axios from "axios";
 
 
 function RunDiaryBoxComponent() {
  
   const context = useContext(DataContext)
-  const{createRunDiary} = context
+  const{createRunDiary ,userID,toggleForceRender} = context
 
   const navigate = useNavigate()
   
@@ -20,6 +21,7 @@ function RunDiaryBoxComponent() {
     name: "",
     date: "",
     distance: 0,
+    location: "",
     motivate: "",
   });
 
@@ -27,12 +29,15 @@ function RunDiaryBoxComponent() {
     setRunDiary({...runDiary, [event.target.name]:event.target.value});
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    createRunDiary({...runDiary,id:uuidv4(),distance: Number(runDiary.distance)})
+    const newDiary = await axios.post(`http://localhost:2408/user/${userID}/diary`,runDiary)
+    // createRunDiary({...runDiary,id:uuidv4(),distance: Number(runDiary.distance)})
+    toggleForceRender()
     navigate('/')
+    console.log(newDiary)
   }
-
+  
   return (
     <>
       <div className="rundiarybox-box">
@@ -51,6 +56,15 @@ function RunDiaryBoxComponent() {
           <div className="rundiarybox-form-input">
             <input onChange={handleChange} type="date" name="date" id="date" />
           </div>
+
+
+          <div className="rundiarybox-form-info">
+            <label htmlFor="location">Location</label>
+          </div>
+          <div className="rundiarybox-form-input">
+            <input onChange={handleChange} type="text" name="location" id="location" />
+          </div>
+
 
           <div className="rundiarybox-form-info">
             <label htmlFor="distance">Distances/KM</label>
