@@ -2,20 +2,21 @@ import React from 'react'
 import './RankingNameComponent.css'
 import WinRankPicprofile from '../../img/mikesmile2.jpg'
 
-function RankingNameComponent() {
-    const rankingName = {
-        name:'Kittichon',
-        lastname:'Jr',
-        totalkm:'74'
-    }
+function RankingNameComponent(props) {
+    // const rankingName = {
+    //     name:'Kittichon',
+    //     lastname:'Jr',
+    //     totalkm:'74'
+    // }
 
   return (
     <div className='rankname-component'>
-        <img src={WinRankPicprofile} />
+      <p className='rankname-component-number'>No.{props.no +1} </p>
+        <img src={props.picture || WinRankPicprofile} />
         <h3>
-        {rankingName.name} {rankingName.lastname}
+        {props.data.name}
         </h3>
-        <p>{rankingName.totalkm} KM</p>
+        <p>{props.data.totalkm} KM</p>
     </div>
   )
 }
