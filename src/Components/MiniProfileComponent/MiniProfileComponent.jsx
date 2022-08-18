@@ -14,7 +14,7 @@ function MiniProfileComponent(props) {
             <img src={personalData.bio.picture || Profileforcardpage} />
           </div>
           <div className='miniprofile-info'>
-            <p>Boeing Miffy </p>
+            <p>{personalData.bio.name} </p>
             <p>BMI : {bmi}</p>
             <p>Total Run : {personalData.rundiary.reduce((acc, current)=>{
                         return acc+current.distance
