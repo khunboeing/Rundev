@@ -19,7 +19,6 @@ function ProfileComponent(props){
                 </div>
                 <div className="profile-detial">
                     <p>{bio.name}</p>
-                    <p>ID {user.id}</p>
                     <p>BMI {bmi}</p>
                     <p>Total Run {rundiary.reduce((acc, current)=>{
                         return acc+current.distance
