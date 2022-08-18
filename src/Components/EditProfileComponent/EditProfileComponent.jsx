@@ -3,17 +3,19 @@ import "./EditProfileComponent.css";
 import profilepicedit from "../../img/Boeing2finger.jpg";
 import FileBase from "react-file-base64";
 import { DataContext } from "../../App";
-import { useContext } from "react";
-import { useState ,useRef} from "react";
+import { useContext, useEffect } from "react";
+import { useState, useRef } from "react";
+import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
 function EditProfileComponent() {
   const context = useContext(DataContext);
-  const { data } = context;
-  const refConfirmPassword = useRef()
-  const divShowErrorPass = useRef()
-  const divShowErrorConfirm = useRef()
-  const refPassword = useRef()
-
+  const { data, userID, toggleForceRender } = context;
+  const refConfirmPassword = useRef();
+  const divShowErrorPass = useRef();
+  const divShowErrorConfirm = useRef();
+  const refPassword = useRef();
+  const navigate = useNavigate();
 
   const [isChangePassword, setIsChnagePassword] = useState(false);
 
@@ -24,64 +26,85 @@ function EditProfileComponent() {
     height: data.bio.height,
     age: data.bio.age,
     gender: data.bio.gender,
-    picture: data.bio.picture
-  })
-  // useEffect(()=>{
-  //   setFormData({
-  //     name: data.bio.name,
-  //     weight: data.bio.weight,
-  //     height: data.bio.height,
-  //     age: data.bio.age,
-  //     gender: data.bio.gender,
-  //     picture: data.bio.picture
-  //   })
-  // },[])
-   //End edit and keep state back
+    picture: data.bio.picture,
+  });
+  useEffect(() => {
+    setFormData({
+      name: data.bio.name,
+      weight: data.bio.weight,
+      height: data.bio.height,
+      age: data.bio.age,
+      gender: data.bio.gender,
+      picture: data.bio.picture,
+    });
+  }, [data]);
+  //End edit and keep state back
 
   // toggle
-  function toggle(event){
-    event.preventDefault()
-    setIsChnagePassword(!isChangePassword)
+  function toggle(event) {
+    event.preventDefault();
+    setIsChnagePassword(!isChangePassword);
   }
-//end toggle
+  //end toggle
 
- function handleChange(event){
-  setFormData({...formData,[event.target.name]:event.target.value})
-  //เอาข้อมูลเก่าถูกทับด้วยข้อมูลใหม่ที่ถูกแก้ไข จะทำให้พิมแก้ไขในinput ได้
- }
- function confirmPasswordCheck() {
-  const confirmPassword = refConfirmPassword.current.value
-  return formData.password === confirmPassword
-}
-function setError(){
-  refPassword.current.focus()
-  refConfirmPassword.current.style.backgroundColor = '#e85757'
-  refPassword.current.style.backgroundColor = '#e85757'
+  function handleChange(event) {
+    setFormData({ ...formData, [event.target.name]: event.target.value });
+    //เอาข้อมูลเก่าถูกทับด้วยข้อมูลใหม่ที่ถูกแก้ไข จะทำให้พิมแก้ไขในinput ได้
+  }
+  function confirmPasswordCheck() {
+    const confirmPassword = refConfirmPassword.current.value;
+    return formData.password === confirmPassword;
+  }
+  function setError() {
+    refPassword.current.focus();
+    refConfirmPassword.current.style.backgroundColor = "#e85757";
+    refPassword.current.style.backgroundColor = "#e85757";
 
-  divShowErrorPass.current.className = 'wrong-password'
-  divShowErrorConfirm.current.className = 'wrong-password'
-}
-function clearError(){
-  refConfirmPassword.current.style.backgroundColor = 'white'
-  refPassword.current.style.backgroundColor = 'white'
+    divShowErrorPass.current.className = "wrong-password";
+    divShowErrorConfirm.current.className = "wrong-password";
+  }
+  function clearError() {
+    refConfirmPassword.current.style.backgroundColor = "white";
+    refPassword.current.style.backgroundColor = "white";
 
-  divShowErrorPass.current.className = ''
-  divShowErrorConfirm.current.className = ''
-}
-function handleSubmit(event){
-  event.preventDefault()
-  if (isChangePassword) {
-    if(confirmPasswordCheck()){
-      //function ที่ส่งข้อมูลที่ได้มาไปupdate 
-      clearError()
+    divShowErrorPass.current.className = "";
+    divShowErrorConfirm.current.className = "";
+  }
+  async function handleSubmit(event) {
+    event.preventDefault();
+    if (isChangePassword) {
+      if (confirmPasswordCheck()) {
+        //function ที่ส่งข้อมูลที่ได้มาไปupdate
+        const userDataUpdated = await axios.put(
+          `http://localhost:2408/user/${userID}`,
+          {
+            auth: { password: formData.password },
+            bio: {
+              name: formData.name,
+              weight: formData.weight,
+              height: formData.height,
+              age: formData.age,
+              gender: formData.gender,
+              picture: formData.picture,
+            },
+          }
+        );
+        toggleForceRender();
+      navigate('/')
+        clearError();
+      } else {
+        setError();
+      }
     } else {
-      setError()
+      const userDataUpdated = await axios.put(
+        `http://localhost:2408/user/${userID}`,
+        {bio:formData}
+      );
+      toggleForceRender();
+      navigate('/')
     }
   }
-}
 
-
- console.log(formData)
   return (
     <div className="page-editprofile-container">
       <form onSubmit={handleSubmit}>
@@ -106,10 +129,7 @@ function handleSubmit(event){
           </div>
 
           <div className="btn-toggle-container">
-            <button
-              onClick={toggle}
-              className="btn-toggle-pw"
-            >
+            <button onClick={toggle} className="btn-toggle-pw">
               Change Password
             </button>
           </div>
@@ -122,7 +142,7 @@ function handleSubmit(event){
               <div className="create-p-input">
                 <div ref={divShowErrorPass}></div>
                 <input
-                ref={refPassword}
+                  ref={refPassword}
                   onChange={handleChange}
                   name="password"
                   type="password"
@@ -138,7 +158,7 @@ function handleSubmit(event){
               <div className="create-p-input">
                 <div ref={divShowErrorConfirm}></div>
                 <input
-                ref={refConfirmPassword}
+                  ref={refConfirmPassword}
                   name="pwconfirm"
                   type="password"
                   id="pwconfirm"
@@ -155,7 +175,7 @@ function handleSubmit(event){
           </div>
           <div className="create-p-input">
             <input
-            onChange={handleChange}
+              onChange={handleChange}
               name="weight"
               value={formData.weight}
               type="number"
@@ -170,7 +190,7 @@ function handleSubmit(event){
           </div>
           <div className="create-p-input">
             <input
-            onChange={handleChange}
+              onChange={handleChange}
               name="height"
               value={formData.height}
               type="number"
@@ -185,7 +205,7 @@ function handleSubmit(event){
           </div>
           <div className="create-p-input">
             <input
-            onChange={handleChange}
+              onChange={handleChange}
               name="age"
               value={formData.age}
               type="number"
@@ -199,16 +219,29 @@ function handleSubmit(event){
             <label htmlFor="gender">GENDER</label>
           </div>
           <div className="create-p-gender">
-            <select onChange={handleChange} value={formData.gender} name="gender" id="gender">
+            <select
+              onChange={handleChange}
+              value={formData.gender}
+              name="gender"
+              id="gender"
+            >
               <option value="female">Female</option>
               <option value="male">Male</option>
             </select>
           </div>
         </div>
         <div className="create-p-label-load">
-          <FileBase onDone={(filePic)=>setFormData({...formData,picture: filePic.base64})} type="file" multiple={false}  />
+          <FileBase
+            onDone={(filePic) =>
+              setFormData({ ...formData, picture: filePic.base64 })
+            }
+            type="file"
+            multiple={false}
+          />
         </div>
-        <button type="submit" className="btn-save-editprofile">SAVE</button>
+        <button type="submit" className="btn-save-editprofile">
+          SAVE
+        </button>
       </form>
     </div>
   );
