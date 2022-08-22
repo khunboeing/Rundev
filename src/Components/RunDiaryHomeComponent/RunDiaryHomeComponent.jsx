@@ -24,9 +24,11 @@ function RunDiaryHomeComponent(props) {
           <RunDiaryCardComponent key={card.id} rundiary={card} />
         ))}
       </div>
-      <Link to="/rundiary">
+      {cards.length >= 4 &&
+        <Link to="/rundiary">
         <button>See more</button>
       </Link>
+      }
     </div>
   );
 }
