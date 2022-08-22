@@ -6,14 +6,14 @@ import CreateProfilePage from "./Pages/CreateProfilePage/CreateProfilePage";
 import EditProfilePage from "./Pages/EditProfilePage/EditProfilePage";
 import FullRunDiaryPage from "./Pages/FullRunDiaryPage/FullRunDiaryPage";
 import CreateRunDiaryPage from "./Pages/CreateRunDiaryPage/CreateRunDiaryPage";
+import AboutMePage from "./Pages/AboutMePage/AboutMePage";
 import { useState, createContext, useEffect } from "react";
 import axios from "axios";
 
 export const DataContext = createContext();
 
 function App() {
-
-  const [forceRender, setForceRender] = useState(true)
+  const [forceRender, setForceRender] = useState(true);
 
   const [userID, setUserID] = useState("");
   // const userID = JSON.parse(localStorage.getItem('rundev'))
@@ -36,31 +36,31 @@ function App() {
     rundiary: [],
   });
   useEffect(() => {
-    (async () => {
-      const users = await axios.get(
-        `${import.meta.env.VITE_baseURL}/user/62f93f05129b0cce4860c897`
-      );
-      const reIdrundiary = users.data.rundiary.map((rundiary) => 
-      (
-        {
-        id: rundiary._id,
-        ...rundiary,
-        date: new Date(rundiary.date).toLocaleDateString(),
-      }
-      )
+    const userId = JSON.parse(localStorage.getItem("auth"));
+    // console.log(JSON.parse(userId));
+    if (userId) {
+      (async () => {
+        const users = await axios.get(
+          `${import.meta.env.VITE_BASE_URL}/user/${userId}`
+        );
+        console.log(users);
+        const reIdrundiary = users.data.rundiary.map((rundiary) => ({
+          id: rundiary._id,
+          ...rundiary,
+          date: new Date(rundiary.date).toLocaleDateString(),
+        }));
 
-      );
-
-      setUserID(users.data._id);
-      // localStorage.setItem('rundev',JSON.stringify(users.data._id))
-      setData({ ...users.data, rundiary: reIdrundiary });
-    })();
+        setUserID(users.data._id);
+        // localStorage.setItem('rundev',JSON.stringify(users.data._id))
+        setData({ ...users.data, rundiary: reIdrundiary });
+      })();
+    }
   }, [forceRender]);
 
-  function toggleForceRender(){
-    setForceRender((prev)=>{
-      return !prev
-    })
+  function toggleForceRender() {
+    setForceRender((prev) => {
+      return !prev;
+    });
   }
 
   // create Run Diary (+)
@@ -103,6 +103,7 @@ function App() {
           <Route path="/editprofile" element={<EditProfilePage />} />
           <Route path="/rundiary" element={<FullRunDiaryPage />} />
           <Route path="/createrundiary" element={<CreateRunDiaryPage />} />
+          <Route path="/aboutme" element={<AboutMePage />} />
         </Routes>
       </BrowserRouter>
     </DataContext.Provider>

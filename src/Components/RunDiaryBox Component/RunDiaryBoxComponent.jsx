@@ -31,7 +31,7 @@ function RunDiaryBoxComponent() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    const newDiary = await axios.post(`http://localhost:2408/user/${userID}/diary`,runDiary)
+    const newDiary = await axios.post(`${import.meta.env.VITE_BASE_URL}/user/${userID}/diary`,runDiary)
     // createRunDiary({...runDiary,id:uuidv4(),distance: Number(runDiary.distance)})
     toggleForceRender()
     navigate('/')
@@ -47,14 +47,14 @@ function RunDiaryBoxComponent() {
             <label htmlFor="name">Name</label>
           </div>
           <div className="rundiarybox-form-input">
-            <input onChange={handleChange} type="text" name="name" id="name" />
+            <input onChange={handleChange} type="text" name="name" id="name" required />
           </div>
 
           <div className="rundiarybox-form-info">
             <label htmlFor="date">Date</label>
           </div>
           <div className="rundiarybox-form-input">
-            <input onChange={handleChange} type="date" name="date" id="date" />
+            <input onChange={handleChange} type="date" name="date" id="date" required />
           </div>
 
 
@@ -62,7 +62,7 @@ function RunDiaryBoxComponent() {
             <label htmlFor="location">Location</label>
           </div>
           <div className="rundiarybox-form-input">
-            <input onChange={handleChange} type="text" name="location" id="location" />
+            <input onChange={handleChange} type="text" name="location" id="location" required />
           </div>
 
 
@@ -75,6 +75,7 @@ function RunDiaryBoxComponent() {
               type="number"
               name="distance"
               id="distance"
+              required
             />
           </div>
 
@@ -87,6 +88,7 @@ function RunDiaryBoxComponent() {
               type="text"
               name="motivate"
               id="motivate"
+              required
             />
           </div>
 

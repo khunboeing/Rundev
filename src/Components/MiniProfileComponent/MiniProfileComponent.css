@@ -20,6 +20,7 @@
     height: 250px;
     border: 10px solid white;
     border-radius: 50%;
+    object-fit: cover;
 }
 .miniprofile-info p{
     font-size: 30px;

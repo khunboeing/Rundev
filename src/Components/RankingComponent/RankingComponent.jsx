@@ -10,7 +10,7 @@ const [ranking, setRanking] = useState([])
 useEffect(()=>{
   (async function getAllUser(){
     // get data from backend
-    const allUserData = await axios.get('http://localhost:2408/user')
+    const allUserData = await axios.get(`${import.meta.env.VITE_BASE_URL}/user`)
     // sum user distance
     const allUserTotalDistance = allUserData.data.map((user)=>{
       return {totalkm:sumRundiaryKM(user.rundiary),name: user.bio.name,id:user._id,picture: user.bio.picture}
@@ -32,11 +32,19 @@ useEffect(()=>{
   }
   function getTop3Ranking(users){
     let top3 =[]
-    for (let i=0; i<3; i++){
-      top3.push(users[i])
+    if (users.length > 3){
+      for (let i=0; i<3; i++){
+        top3.push(users[i])
+      }
+      return top3
+    }else{
+      for (let i=0; i<users.length; i++){
+        top3.push(users[i])
+      }
+      return top3
     }
-    return top3
   }
+  console.log(ranking);
   return (
     <div className="ranking">
       <div id="stars"></div>

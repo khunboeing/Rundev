@@ -8,12 +8,19 @@ import RunDiaryHomeComponent from "../../Components/RunDiaryHomeComponent/RunDia
 import TableComponent from "../../Components/TableComponent/TableComponent";
 
 import {DataContext} from '../../App'
-import {useContext} from 'react'
+import {useContext,useEffect} from 'react'
+import {useNavigate} from 'react-router-dom'
 
 
 function HomePage() {
 const context = useContext(DataContext)
-const {data} = context
+const navigate = useNavigate()
+useEffect(()=>{
+  // check the exists user in localStorage
+  const existsUser = localStorage.getItem('auth')
+  if(!existsUser) navigate('/login')
+})
+
   return (
     <>
       <div className="homepage-container">
@@ -24,14 +31,14 @@ const {data} = context
               <div className="home-profile">
                 <ProfileComponent
                   personalData={{
-                    user: data.user,
-                    bio: data.bio,
-                    rundiary: data.rundiary,
+                    user: context.data.user,
+                    bio: context.data.bio,
+                    rundiary: context.data.rundiary,
                   }}
                 />
               </div>
               <div className="home-run-diary">
-                <RunDiaryHomeComponent rundiary={data.rundiary}/>
+                <RunDiaryHomeComponent rundiary={context.data.rundiary}/>
               </div>
             </div>
 

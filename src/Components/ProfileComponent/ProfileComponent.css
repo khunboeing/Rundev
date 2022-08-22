@@ -14,6 +14,7 @@
     height: 250px;
     border: 12px solid white;
     border-radius: 50%;
+    object-fit: cover;
 }
 .profile-detial p{
     background-image: linear-gradient(60deg, #5768aba4 0%, #d2dbdb95 100%);

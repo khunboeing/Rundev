@@ -1,6 +1,8 @@
 import React from 'react'
 import './MiniProfileComponent.css'
 import Profileforcardpage from '../../img/boeing2finger.jpg'
+import defaultpic from '../../img/userdefaultpic.webp'
+import { Link } from 'react-router-dom'
 
 function MiniProfileComponent(props) {
 
@@ -11,7 +13,7 @@ function MiniProfileComponent(props) {
     <div className='miniprofile-container'>
         <div className='miniprofile-box'>
           <div className='miniprofile-img'>
-            <img src={personalData.bio.picture || Profileforcardpage} />
+            <img src={personalData.bio.picture || defaultpic} />
           </div>
           <div className='miniprofile-info'>
             <p>{personalData.bio.name} </p>
@@ -19,7 +21,7 @@ function MiniProfileComponent(props) {
             <p>Total Run : {personalData.rundiary.reduce((acc, current)=>{
                         return acc+current.distance
                     },0)}</p>
-            <button>Log Out</button>
+            <Link to='/login'><button onClick={()=> localStorage.removeItem('auth')}>Log Out</button></Link>
           </div>
         </div>
     </div>

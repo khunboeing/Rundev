@@ -2,6 +2,8 @@ import React from "react";
 import "./CreateProfileComponent.css";
 import FileBase from "react-file-base64";
 import { useState, useRef } from "react";
+import axios from "axios";
+import {useNavigate} from 'react-router-dom'
 
 function CreateProfileEditProfileComponent() {
   const [formData, setFormData] = useState({
@@ -18,16 +20,35 @@ function CreateProfileEditProfileComponent() {
   const refPassword = useRef()
   const divShowErrorPass = useRef()
   const divShowErrorConfirm = useRef()
+  const navigate = useNavigate()
 
 //เก็บของมาจาก input ทั้งหน้า
   function handleChange(event) {
     setFormData({...formData,[event.target.name]: event.target.value})
   }
-  function handleOnSubmit(event) {
+  async function handleOnSubmit(event) {
     event.preventDefault()
     if (confirmPasswordCheck()) {
       // send to backend database
-      clearError()
+      try {
+        
+        const status = await axios.post(`${import.meta.env.VITE_BASE_URL}/login/signup`,{
+          auth: { password: formData.password,email: formData.email },
+          bio: {
+            name: formData.name,
+            weight: formData.weight,
+            height: formData.height,
+            age: formData.age,
+            gender: formData.gender,
+            picture: formData.picture,
+          },
+        })
+        if (status.status === 200) alert(status.data.message)
+        navigate('/login')
+        clearError()
+      } catch (error) {
+        alert(error.response.data.message)
+      }
     } else {
       setError()
     }
@@ -51,8 +72,7 @@ function CreateProfileEditProfileComponent() {
     const confirmPassword = refConfirmPassword.current.value
     return formData.password === confirmPassword
   }
-  
-  console.log(formData)
+
 
   return (
     <div className="Profile-user-container">

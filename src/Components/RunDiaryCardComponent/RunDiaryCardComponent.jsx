@@ -19,7 +19,7 @@ function RunDiaryCardComponent(props) {
     // }
 
   async function haddleDelete(){
-    const deleted = await axios.delete(`http://localhost:2408/user/${userID}/diary/${userdata.id}`)
+    const deleted = await axios.delete(`${import.meta.env.VITE_BASE_URL}/user/${userID}/diary/${userdata.id}`)
     toggleForceRender()
   }
 

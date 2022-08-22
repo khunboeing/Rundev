@@ -7,6 +7,7 @@ import { useContext, useEffect } from "react";
 import { useState, useRef } from "react";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import defaultpic from '../../img/userdefaultpic.webp';
 
 function EditProfileComponent() {
   const context = useContext(DataContext);
@@ -76,7 +77,7 @@ function EditProfileComponent() {
       if (confirmPasswordCheck()) {
         //function ที่ส่งข้อมูลที่ได้มาไปupdate
         const userDataUpdated = await axios.put(
-          `http://localhost:2408/user/${userID}`,
+          `${import.meta.env.VITE_BASE_URL}/user/${userID}`,
           {
             auth: { password: formData.password },
             bio: {
@@ -97,7 +98,7 @@ function EditProfileComponent() {
       }
     } else {
       const userDataUpdated = await axios.put(
-        `http://localhost:2408/user/${userID}`,
+        `${import.meta.env.VITE_BASE_URL}/user/${userID}`,
         {bio:formData}
       );
       toggleForceRender();
@@ -110,7 +111,7 @@ function EditProfileComponent() {
       <form onSubmit={handleSubmit}>
         <h1>Edit Your Profile</h1>
         <div className="profile-Account-picture">
-          <img src={formData.picture || profilepicedit} />
+          <img src={formData.picture || defaultpic} />
         </div>
         <div>
           <div className="create-p-label">
