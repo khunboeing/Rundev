@@ -1,6 +1,5 @@
 import React from 'react'
 import './MiniProfileComponent.css'
-import Profileforcardpage from '../../img/boeing2finger.jpg'
 import defaultpic from '../../img/userdefaultpic.webp'
 import { Link } from 'react-router-dom'
 

@@ -1,6 +1,5 @@
 import React from "react";
 import "./EditProfileComponent.css";
-import profilepicedit from "../../img/Boeing2finger.jpg";
 import FileBase from "react-file-base64";
 import { DataContext } from "../../App";
 import { useContext, useEffect } from "react";

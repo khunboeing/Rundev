@@ -1,5 +1,4 @@
 import './ProfileComponent.css'
-import Profilepicturehome from '../../img/boeing2finger.jpg'
 import { Link } from 'react-router-dom'
 import {useContext} from 'react'
 import {DataContext} from '../../App'

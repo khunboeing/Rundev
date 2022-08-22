@@ -1,6 +1,5 @@
 import React from 'react'
 import './RankingNameComponent.css'
-import WinRankPicprofile from '../../img/mikesmile2.jpg'
 import defaultpic from '../../img/userdefaultpic.webp'
 
 function RankingNameComponent(props) {
