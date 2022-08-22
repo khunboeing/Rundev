@@ -1,15 +1,12 @@
 .banner{
     width: 100%;
     height: 100%;
-    background-image: url(../../img/womenrunbanner.png);
-    background-size: cover;
     margin-top: 18px;
     border-radius: 10px;
     position: relative;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+    overflow: hidden;
 }
 .banner::after{
     content: '';
@@ -21,28 +18,88 @@
     background-color: rgb(151, 157, 161);
     opacity: .5;
     z-index: 1;
+
+    pointer-events: none;
 }
-.banner h2{
+.banner-img-text h2{
 color: rgb(255, 255, 255);
 text-shadow: 2px 2px gray;
 font-size: 35px;
 margin-bottom: 20px;
-z-index: 2;
 position: relative;
 }
-.banner a{
+.banner-img-text a{
     text-decoration: none;
     background-color: rgb(80, 80, 223);
     position: relative;
-    z-index: 2;
     color: white;
     padding: 12px 18px;
     margin-top: 20px;
     border-radius: 10px;
 }
-.banner a:hover{
+.banner-img-text a:hover{
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.847),
     0 0 20px rgba(255, 255, 255, 0.711),
     0 0 40px rgba(255, 255, 255, 0.53);
     background-color: rgb(25, 164, 25);
+}
+
+.banner-img{
+    position: relative;
+    width: 100%;
+    height: calc(100vh * 60 /100)
+}
+
+.banner-img>img{
+    object-fit: cover;
+    width: calc(100vw * 40 /100);
+    height: 100%;
+}
+.banner-img-text{
+    position: absolute;
+    top: 35%;
+    left: 52%;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+
+    z-index: 2;
+}
+.banner-button{
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    top: 55%;
+    transform: translateY(-50%);
+
+    padding: 0 2rem;
+    width: 100%;
+    justify-content: space-between;
+
+}
+.banner-button>button{
+    position: relative;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.banner-button>button>img{
+    opacity: .5;
+}
+.banner-button>button:hover img{
+    opacity: 1;
+}
+
+.fade-enter{
+    opacity: 0;
+}
+.fade-enter-active{
+    opacity: 1;
+    transition: opacity 3000ms, transform 3000ms;
+}
+.fade-exit{
+    opacity: 1;
+}
+.fade-exit-active{
+    opacity: 0;
+    transition: opacity 3000ms,transform 3000ms ;
 }

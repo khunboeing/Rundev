@@ -27,7 +27,7 @@
     font-size: 25px;
     z-index: 2;
 }
-.TableComponent button{
+.TableComponent button {
     position: relative;
     z-index: 2;
     font-size: 20px;

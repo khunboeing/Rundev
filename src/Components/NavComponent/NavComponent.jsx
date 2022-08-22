@@ -12,7 +12,8 @@ function NavComponent (){
             <div className='nav-btn'>
                 <Link to='/'>Home</Link>
                 <Link to="/editprofile">Profile</Link>
-                <Link to="#">About Me</Link>
+                <Link to="/aboutme">About Me</Link>
+                <Link style={{color:'#BC80FF'}} to="/login" onClick={()=> localStorage.removeItem('auth')}>Log out</Link>
             </div>
         </div>
     )

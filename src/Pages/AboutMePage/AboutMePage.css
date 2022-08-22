@@ -1,0 +1,108 @@
+@import './BGaboutme.css';
+.aboutme-container{
+ background: rgb(17, 18, 18);
+ width: 100vw;
+ height: 100vh;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ overflow: hidden;
+}
+
+.aboutme-topic{
+ border: 1.5px solid white;
+ border-radius: 20px;
+ width: 50%;
+ padding: 30px 40px;
+ background-image: linear-gradient(60deg, #2690dcc4 0%, #53566075 100%);
+}
+
+.aboutme-container h2{
+ color: white;
+ font-size: 40px;
+}
+
+.aboutme-container p{
+ color: white;
+ font-size: 20px;
+ padding-left: 15px;
+ margin-top: 20px;
+ text-indent: 20px;
+}
+
+.aboutme-creator{
+ display: flex;
+ border: 1px solid white;
+ border-radius: 20px;
+ padding: 30px 40px;
+ margin-top: 50px;
+}
+
+.aboutme-creator-name{
+ padding-right: 30px;
+}
+
+.aboutme-creator-img{
+ width: 100px;  
+ height: 100px;
+}
+
+.aboutme-creator-img img{
+ width: 100%;
+ height: 100%;
+ border-radius: 50%;
+ border: 5px solid rgb(254, 254, 254);
+ object-fit: cover;
+}
+
+/* creator btn glass */
+.aboutme-creator-icons{
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+}
+.btn-glass
+{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    border-radius: 10px;
+    background-image: linear-gradient(60deg, #5d88ed 0%, #dde2e95e 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 2em;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 45px rgba(0,0,0,0.1);
+    backdrop-filter: blur(2px);
+    transition: 0.5s;
+    overflow: hidden;
+    margin-left: 10px;
+}
+.btn-glass:hover
+{
+    transform: translateY(-20px);
+}
+.btn-glass:before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: skewX(45deg) translateX(150px);
+    transition: 0.5s;
+}
+.btn-glass:hover::before
+{
+    transform: skewX(45deg) translateX(-150px);
+}
+/* End creator btn glass */
