@@ -21,6 +21,7 @@ function RunDiaryCardComponent(props) {
   async function haddleDelete(){
     const deleted = await axios.delete(`${import.meta.env.VITE_BASE_URL}/user/${userID}/diary/${userdata.id}`)
     toggleForceRender()
+    alert('delete completed.')
   }
 
   return (

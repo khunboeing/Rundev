@@ -32,8 +32,14 @@ function BannerComponent() {
     },
   ];
 
-  const [current, setCurrent] = useState(0);
-  const end = mockupImg.length - 1;
+  const [current, setCurrent] = useState(0); // show the current point
+  const end = mockupImg.length - 1; //slide the end
+  
+  function slide(event) {
+    if (event?.target?.id === "prev" || event === 'next')
+      setCurrent(current >= end ? 0 : current + 1);
+    else setCurrent(current <= 0 ? end : current - 1);
+  }
   useEffect(()=>{
     const slideInterval = setInterval(()=>{
       slide('next')
@@ -45,11 +51,6 @@ function BannerComponent() {
     } 
       
   })
-  function slide(event) {
-    if (event?.target?.id === "prev" || event === 'next')
-      setCurrent(current >= end ? 0 : current + 1);
-    else setCurrent(current <= 0 ? end : current - 1);
-  }
   return (
         <TransitionGroup className="banner">
           <div className="banner-button">

@@ -88,18 +88,18 @@ position: relative;
 .banner-button>button:hover img{
     opacity: 1;
 }
-
+/* CSSTransition fade */
 .fade-enter{
     opacity: 0;
 }
 .fade-enter-active{
     opacity: 1;
-    transition: opacity 3000ms, transform 3000ms;
+    transition: opacity 3000ms;
 }
-.fade-exit{
+/* .fade-exit{
     opacity: 1;
 }
 .fade-exit-active{
     opacity: 0;
-    transition: opacity 3000ms,transform 3000ms ;
-}
+    transition: opacity 3000ms;
+} */
